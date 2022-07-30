@@ -15,8 +15,6 @@ import com.three.gulimall.ware.service.PurchaseDetailService;
 import com.three.common.utils.PageUtils;
 import com.three.common.utils.R;
 
-
-
 /**
  * 
  *

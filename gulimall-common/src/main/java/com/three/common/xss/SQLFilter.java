@@ -8,7 +8,7 @@
 
 package com.three.common.xss;
 
-import com.three.common.exception.RRException;
+import com.three.common.utils.RRException;
 import org.apache.commons.lang.StringUtils;
 
 /**

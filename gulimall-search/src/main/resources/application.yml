@@ -1,0 +1,19 @@
+server:
+  port: 12000
+
+spring:
+  application:
+    name: gulimall-search
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  redis:
+    host: 192.168.10.100
+    port: 6379
+  thymeleaf:
+    cache: false
+
+logging:
+  level:
+    com.three.gulimall: debug

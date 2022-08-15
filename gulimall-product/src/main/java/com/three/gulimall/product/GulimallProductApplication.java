@@ -3,6 +3,7 @@ package com.three.gulimall.product;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
@@ -50,8 +51,25 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * 4、统一的异常处理
  * @ControllerAdvice 1）、编写异常处理类，使用@ControllerAdvice。
  * 2）、使用@ExceptionHandler标注方法可以处理的异常。
+ * 5、模板引擎
+ * 1）、thymeleaf-starter：关闭缓存
+ * 2）、静态资源放在static文件夹下，可以照路径访问
+ * 3）、页面放在templates下，直接访问-》默认找index
+ *
+ * 6、整合redis
+ * 1）、引入依赖
+ * 2）、配置host信息
+ * 3）、StringRedisTemplate操作redis
+ *
+ * 7、整合SpringCache缓存优化开发
+ * 1）、引入依赖（cache、redis）
+ * 2）、配置redis作为缓存
+ * 3）、测试使用缓存---》开启缓存功能@EnableCaching---》使用注解完成缓存操作
+ * 4）、原理---》CacheAutoConfiguration---》RedisCacheConfiguration---》自动配置了RedisCacheManager
+ *          ---》初始化所有缓存---》每个缓存决定使用什么配置---》RedisCacheConfiguration有就用已有的，没有就用默认的
  * * @author three
  */
+@EnableCaching
 @EnableFeignClients()
 @MapperScan("com.three.gulimall.product.dao")
 @EnableDiscoveryClient

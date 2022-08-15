@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: gulimall-third-party
   cloud:
     nacos:
       discovery:
@@ -9,8 +11,12 @@ spring:
       oss:
         endpoint: oss-cn-hangzhou.aliyuncs.com
         bucket: gulimall-three220802
-  application:
-    name: gulimall-third-party
+      sms:
+        host: https://gyytz.market.alicloudapi.com
+        path: /sms/smsSend
+        skin: 908e94ccf08b4476ba6c876d13f084ad
+        sign: 2e65b1bb3d054466b82f0c9d125465e2
+        appcode: 90c8a0876ed4406f86dea2424776e5d8
 
 server:
   port: 30000

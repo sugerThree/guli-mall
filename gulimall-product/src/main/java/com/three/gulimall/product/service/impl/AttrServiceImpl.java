@@ -210,6 +210,13 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
     }
 
     @Override
+    public List<Long> selectSearchAttrs(List<Long> attrIds) {
+        List<Long> searchAttrIds = this.baseMapper.selectSearchAttrIds(attrIds);
+        return searchAttrIds;
+    }
+
+
+    @Override
     public void deleteRelation(AttrGroupRelationVo[] vos) {
         List<AttrAttrgroupRelationEntity> entities = Arrays.asList(vos).stream().map((item) -> {
             AttrAttrgroupRelationEntity relationEntity = new AttrAttrgroupRelationEntity();
